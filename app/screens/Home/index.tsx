@@ -3,6 +3,7 @@ import { View, Text, FlatList, Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Car, carData } from "@/assets/data/carData";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [data, setData] = useState<Car[]>(carData.slice(0, 1));
@@ -29,7 +30,7 @@ export default function Home() {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.sectionTitle}>Carros</Text>
       <FlatList
         data={data}
@@ -42,11 +43,15 @@ export default function Home() {
         onEndReachedThreshold={0.5}
         ListFooterComponent={loading ? <Text>Loading...</Text> : null}
       />
+      <Footer />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   sectionTitle: {
     fontSize: 24,
     fontWeight: 'bold',
