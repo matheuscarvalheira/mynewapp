@@ -5,7 +5,7 @@ import { Container, FooterButton, FooterText } from './styles';
 import { Text } from 'react-native';
 
 export default function Footer() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
 
   const handleNavigateToHome = () => {
     navigation.navigate('Home');

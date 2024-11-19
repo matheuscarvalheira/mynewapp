@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Geolocalizacao from "./screens/Geolocation";
+import Login from "./screens/Login";
 
 
 const StackNavigation = createNativeStackNavigator();
@@ -12,7 +13,12 @@ const StackNavigation = createNativeStackNavigator();
 export default function App() {
   return (
       <NavigationContainer independent={true}>
-        <StackNavigation.Navigator initialRouteName="Home">
+        <StackNavigation.Navigator initialRouteName="Login">
+          <StackNavigation.Screen
+            name="Login"
+            component={Login}
+            options={{headerShown: false}}
+          />
           <StackNavigation.Screen
             name="Home"
             component={Home}
@@ -31,7 +37,7 @@ export default function App() {
                   canGoBack={navigation.canGoBack()}
                 />
               ),
-              footer: () => <Footer navigation={navigation} />,
+              footer: () => <Footer />,
             })}
           />
         </StackNavigation.Navigator>

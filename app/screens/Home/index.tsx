@@ -3,6 +3,8 @@ import { View, Text, FlatList, Image, StyleSheet, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Car, carData } from "@/assets/data/carData";
+import { signOut } from "firebase/auth";
+import { auth } from "@/config/firebase";
 
 export default function Home() {
   const [data, setData] = useState<Car[]>(carData.slice(0, 1));
@@ -31,6 +33,11 @@ export default function Home() {
       setLoading(false);
     }, 1000);
   };
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigation.navigate("Login");
+  }
 
   return (
     <View style={styles.container}>
