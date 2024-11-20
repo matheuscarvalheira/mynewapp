@@ -2,9 +2,9 @@ import React from "react";
 import { View, Text, FlatList, Image, StyleSheet, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { Car, carData } from "@/assets/data/carData";
 import { signOut } from "firebase/auth";
-import { auth } from "@/config/firebase";
+import { auth } from "../../../config/firebase";
+import { Car, carData } from "../../../assets/data/carData";
 
 export default function Home() {
   const [data, setData] = useState<Car[]>(carData.slice(0, 1));

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { styles } from "./styles";
 import { View, Button, StyleSheet } from "react-native";
 import * as Location from "expo-location";
 import MapView, { Marker } from "react-native-maps";
-import Footer from "@/components/Footer";
+import Footer from "../../../components/Footer";
 import { GOOGLE_API_KEY } from "@env";
-import { styles } from "./styles";
+
 
 export default function Geolocalizacao() {
   const [location, setLocation] = useState({

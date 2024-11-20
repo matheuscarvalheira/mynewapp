@@ -1,11 +1,12 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import Home from "./screens/Home";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Home from "./screens/Home";
+
 import Geolocalizacao from "./screens/Geolocation";
 import Login from "./screens/Login";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 
 const StackNavigation = createNativeStackNavigator();
